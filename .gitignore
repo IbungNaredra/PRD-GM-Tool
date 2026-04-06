@@ -2,6 +2,10 @@
 .tmp-prd-extract/
 .tmp-prd.zip
 
+# Local xlsx extraction (PRD read)
+.xlsx-extract/
+.gm-tool-xlsx.zip
+
 # OS / editor
 Thumbs.db
 Desktop.ini

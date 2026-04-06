@@ -89,7 +89,7 @@
           </div>
         </header>
         <main class="content">
-          <p class="page-intro">All GM operations with pagination. Filter by operation type (including auto-moderation variants), time range, target UID / Post ID. Ban records include contextual “reverse” links (slice shows text links only).</p>
+          <p class="page-intro">All GM operations with pagination. Filter by operation type (bans, unbans, username / bio / avatar reset, auto-moderation variants, GM Credit grant), time range, target UID / Post ID. Ban records include contextual “reverse” links (slice shows text links only).</p>
           <div class="toolbar">
             <select class="input" style="max-width: 220px">
               <option>All operation types</option>
@@ -104,6 +104,7 @@
               <option>Comment unban</option>
               <option>Username reset</option>
               <option>Bio reset</option>
+              <option>Avatar reset</option>
               <option>GM Credit grant</option>
             </select>
             <input class="input" type="text" placeholder="From (WIB)" style="max-width: 140px" />
@@ -162,6 +163,14 @@
                   <td><kbd class="time-wib">2026.03.26 09:00 AM</kbd></td>
                   <td>GM Admin</td>
                   <td>Appeal approved</td>
+                  <td style="color: var(--text-muted)">—</td>
+                </tr>
+                <tr>
+                  <td>Avatar reset</td>
+                  <td><code>usr_7f3a9c</code></td>
+                  <td><kbd class="time-wib">2026.03.25 03:18 PM</kbd></td>
+                  <td>GM Admin</td>
+                  <td>Policy — inappropriate profile image</td>
                   <td style="color: var(--text-muted)">—</td>
                 </tr>
                 <tr>

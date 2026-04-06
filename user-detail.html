@@ -74,7 +74,7 @@
             </a>
           </li>
         </ul>
-        <div class="sidebar-footer">PRD §6.1.2 — User detail &amp; actions</div>
+        <div class="sidebar-footer">PRD §5–§7 — User detail · reset username / bio / avatar</div>
       </aside>
       <div class="main main--compact">
         <header class="topbar">
@@ -144,6 +144,17 @@
                   </div>
                   <button type="button" class="btn btn-outline btn-sm">Reset bio</button>
                 </section>
+                <section class="action-panel-card" aria-labelledby="act-avatar-title">
+                  <p id="act-avatar-title" class="action-panel-section-title">Reset avatar</p>
+                  <p class="action-panel-hint action-panel-hint--short">
+                    Replaces the profile image with the system default avatar. Posts, comments, follows, and Credit are unchanged. User can upload a new compliant avatar anytime.
+                  </p>
+                  <div class="action-field">
+                    <label for="reason-reset-avatar">Reason <span class="req-mark" aria-hidden="true">*</span></label>
+                    <textarea class="input input--action" id="reason-reset-avatar" name="reasonResetAvatar" rows="2" placeholder="Avatar reset reason…"></textarea>
+                  </div>
+                  <button type="button" class="btn btn-outline btn-sm">Reset avatar</button>
+                </section>
               </div>
             </div>
           </div>
@@ -210,6 +221,13 @@
                     <td><kbd class="time-wib">2026.01.10 02:00 PM</kbd></td>
                     <td>GM Admin</td>
                     <td>Policy — impersonation</td>
+                  </tr>
+                  <tr>
+                    <td>Avatar reset</td>
+                    <td><code>usr_7f3a9c</code></td>
+                    <td><kbd class="time-wib">2025.12.03 11:40 AM</kbd></td>
+                    <td>GM Admin</td>
+                    <td>Inappropriate image — policy</td>
                   </tr>
                 </tbody>
               </table>
