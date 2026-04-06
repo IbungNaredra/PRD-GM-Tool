@@ -1,0 +1,8 @@
+# Local docx extraction artifacts
+.tmp-prd-extract/
+.tmp-prd.zip
+
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store

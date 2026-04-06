@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneMore GM Tool — Grant credit</title>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar" aria-label="Main">
+        <div class="sidebar-brand">
+          <img class="logo-img logo-img--sm" src="assets/logo.png" alt="" width="140" height="40" />
+          <div>
+            <strong><span class="brand-title">OneMore</span> GM Tool</strong>
+            <span>V1.1 Prototype</span>
+          </div>
+        </div>
+        <div class="nav-section">Navigation</div>
+        <ul class="nav-list">
+          <li>
+            <a href="home.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Overview
+            </a>
+          </li>
+          <li>
+            <a href="user-search.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              User search
+            </a>
+          </li>
+          <li>
+            <a href="content-search.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              Content search
+            </a>
+          </li>
+          <li>
+            <a class="active" href="grant-credit.html" aria-current="page">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M20 12v10H4V12" />
+                <path d="M2 7h20v5H2z" />
+                <path d="M12 22V7" />
+                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+              </svg>
+              Grant credit
+            </a>
+          </li>
+          <li>
+            <a href="operation-log.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+              Operation log
+            </a>
+          </li>
+        </ul>
+        <div class="sidebar-footer">PRD §6 — GM Credit grant · Batch · WIB</div>
+      </aside>
+      <div class="main">
+        <header class="topbar">
+          <h1 class="topbar-title">Grant credit</h1>
+          <div class="topbar-actions">
+            <a href="index.html" style="font-size: 0.8125rem; color: var(--text-muted)">Sign out</a>
+            <span class="env-pill">staging</span>
+            <div class="user-chip">
+              <div class="user-chip-avatar" aria-hidden="true">GA</div>
+              <span>GM Admin</span>
+            </div>
+          </div>
+        </header>
+        <main class="content grant-credit-page">
+          <p class="page-intro">
+            Batch GM Credit grants: one amount and one expiry per batch; UIDs via paste or CSV (<code>uid</code> header, max 10,000). Confirmation requires typing
+            <kbd>GRANT</kbd>. Credit rules — Credit PRD (not shown here).
+          </p>
+
+          <div class="grant-layout">
+            <div class="grant-col grant-col--form">
+              <div class="card grant-card">
+                <p class="card-title">Batch configuration</p>
+                <div class="field" style="margin-bottom: 0.85rem">
+                  <label for="grant-batch-name">Batch name <span class="req-mark" aria-hidden="true">*</span></label>
+                  <input class="input" type="text" id="grant-batch-name" name="batchName" autocomplete="off" placeholder="Internal label (not shown to users)" />
+                </div>
+                <div class="field" style="margin-bottom: 0.85rem">
+                  <label for="grant-credit-amount">Credit amount (per user) <span class="req-mark" aria-hidden="true">*</span></label>
+                  <input class="input" type="number" id="grant-credit-amount" name="creditAmount" min="1" step="1" placeholder="GM Credits per recipient" />
+                </div>
+                <div class="field" style="margin-bottom: 0.85rem">
+                  <label for="grant-expiry">Expiry date <span class="req-mark" aria-hidden="true">*</span></label>
+                  <input class="input" type="date" id="grant-expiry" name="expiry" />
+                  <span class="field-hint">Unused GM Credits from this batch clear at end of day (WIB, GMT+7).</span>
+                </div>
+                <div class="field" style="margin-bottom: 0">
+                  <label for="grant-reason">Reason <span class="req-mark" aria-hidden="true">*</span></label>
+                  <textarea class="input" id="grant-reason" name="reason" rows="2" placeholder="Audit / ops note (not shown to users)"></textarea>
+                </div>
+              </div>
+
+              <div class="card grant-card">
+                <p class="card-title">Recipient UIDs <span class="req-mark" aria-hidden="true">*</span></p>
+                <div class="uid-tabs" role="tablist" aria-label="UID input mode">
+                  <button type="button" class="uid-tab" role="tab" id="tab-uid-paste" aria-selected="true" aria-controls="panel-uid-paste">Paste</button>
+                  <button type="button" class="uid-tab" role="tab" id="tab-uid-csv" aria-selected="false" aria-controls="panel-uid-csv">CSV upload</button>
+                </div>
+                <div id="panel-uid-paste" role="tabpanel" aria-labelledby="tab-uid-paste">
+                  <label for="grant-uid-paste" class="sr-only">Paste UIDs <span class="req-mark" aria-hidden="true">*</span></label>
+                  <textarea
+                    class="input grant-uid-textarea"
+                    id="grant-uid-paste"
+                    name="uidPaste"
+                    rows="6"
+                    placeholder="One UID per line, or comma-separated. Numeric 4–10 digits. Duplicates removed."
+                  ></textarea>
+                </div>
+                <div id="panel-uid-csv" role="tabpanel" aria-labelledby="tab-uid-csv" hidden>
+                  <p class="grant-csv-hint">Single column CSV with header <code>uid</code>. Max 10,000 UIDs per batch.</p>
+                  <label class="btn btn-outline btn-sm grant-csv-label">
+                    Choose file
+                    <input type="file" id="grant-csv-input" accept=".csv,text/csv" hidden />
+                  </label>
+                </div>
+                <div class="uid-stats">
+                  <span>Valid: <strong id="uid-valid-count">0</strong></span>
+                  <span class="uid-stats-sep">·</span>
+                  <span>Invalid: <strong id="uid-invalid-count">0</strong></span>
+                </div>
+                <p class="grant-preview-label">Valid UIDs (preview)</p>
+                <div class="uid-preview-row" id="uid-preview"></div>
+                <p class="grant-preview-label grant-preview-label--invalid">Invalid entries</p>
+                <div class="uid-preview-row uid-preview-row--invalid" id="uid-invalid-preview"></div>
+              </div>
+            </div>
+
+            <div class="grant-col grant-col--summary">
+              <div class="card grant-card grant-summary-card">
+                <p class="card-title">Live batch summary</p>
+                <dl class="grant-summary-dl">
+                  <div>
+                    <dt>Batch name</dt>
+                    <dd id="summary-batch-name">—</dd>
+                  </div>
+                  <div>
+                    <dt>Recipients</dt>
+                    <dd id="summary-recipients">—</dd>
+                  </div>
+                  <div>
+                    <dt>Credits per user</dt>
+                    <dd id="summary-per-user">—</dd>
+                  </div>
+                  <div>
+                    <dt>Total credits</dt>
+                    <dd id="summary-total">—</dd>
+                  </div>
+                  <div>
+                    <dt>Expiry</dt>
+                    <dd id="summary-expiry">—</dd>
+                  </div>
+                  <div>
+                    <dt>Reason</dt>
+                    <dd id="summary-reason">—</dd>
+                  </div>
+                </dl>
+                <div class="grant-actions">
+                  <button type="button" class="btn btn-primary" id="btn-execute-grant" disabled>Execute grant</button>
+                  <button type="button" class="btn btn-outline" id="btn-clear-form">Clear form</button>
+                </div>
+              </div>
+
+              <div class="card grant-card">
+                <p class="card-title">Recent batches</p>
+                <div class="table-wrap" style="border: none; margin: 0">
+                  <table class="data grant-history-table">
+                    <thead>
+                      <tr>
+                        <th>Batch name</th>
+                        <th>Amount</th>
+                        <th>Executed (WIB)</th>
+                        <th>Recipients</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Q1 community bonus</td>
+                        <td>500</td>
+                        <td><kbd class="time-wib">2026.03.28 04:00 PM</kbd></td>
+                        <td>120</td>
+                        <td><span class="badge badge-success">Active</span></td>
+                      </tr>
+                      <tr>
+                        <td>Creator support Jan</td>
+                        <td>200</td>
+                        <td><kbd class="time-wib">2026.02.10 11:20 AM</kbd></td>
+                        <td>45</td>
+                        <td><span class="badge badge-neutral">Expired</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="grant-history-foot">Full detail &amp; UID lists — filter operation log by batch name or time. Pagination placeholder.</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="grant-toast" class="grant-toast" role="status" hidden></div>
+        </main>
+      </div>
+    </div>
+
+    <div id="grant-confirm-modal" class="modal-backdrop" hidden role="presentation">
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="grant-modal-title">
+        <h2 id="grant-modal-title" class="modal-title">Confirm GM Credit grant</h2>
+        <p class="modal-lead">Grants cannot be reversed. Type <kbd>GRANT</kbd> to confirm.</p>
+        <div id="modal-summary-body" class="modal-summary"></div>
+        <div class="field" style="margin-bottom: 1rem">
+          <label for="grant-confirm-input">Confirmation <span class="req-mark" aria-hidden="true">*</span></label>
+          <input class="input" type="text" id="grant-confirm-input" autocomplete="off" placeholder="GRANT" />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="grant-modal-cancel">Cancel</button>
+          <button type="button" class="btn btn-primary" id="grant-modal-confirm">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/grant-credit.js"></script>
+  </body>
+</html>

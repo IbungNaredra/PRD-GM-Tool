@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneMore GM Tool — User detail</title>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar" aria-label="Main">
+        <div class="sidebar-brand">
+          <img class="logo-img logo-img--sm" src="assets/logo.png" alt="" width="140" height="40" />
+          <div>
+            <strong><span class="brand-title">OneMore</span> GM Tool</strong>
+            <span>V1.1 Prototype</span>
+          </div>
+        </div>
+        <div class="nav-section">Navigation</div>
+        <ul class="nav-list">
+          <li>
+            <a href="home.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Overview
+            </a>
+          </li>
+          <li>
+            <a class="active" href="user-search.html" aria-current="page">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              User search
+            </a>
+          </li>
+          <li>
+            <a href="content-search.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              Content search
+            </a>
+          </li>
+          <li>
+            <a href="grant-credit.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M20 12v10H4V12" />
+                <path d="M2 7h20v5H2z" />
+                <path d="M12 22V7" />
+                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+              </svg>
+              Grant credit
+            </a>
+          </li>
+          <li>
+            <a href="operation-log.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+              Operation log
+            </a>
+          </li>
+        </ul>
+        <div class="sidebar-footer">PRD §6.1.2 — User detail &amp; actions</div>
+      </aside>
+      <div class="main main--compact">
+        <header class="topbar">
+          <h1 class="topbar-title">User detail</h1>
+          <div class="topbar-actions">
+            <a href="index.html" style="font-size: 0.8125rem; color: var(--text-muted)">Sign out</a>
+            <span class="env-pill">staging</span>
+            <div class="user-chip">
+              <div class="user-chip-avatar" aria-hidden="true">GA</div>
+              <span>GM Admin</span>
+            </div>
+          </div>
+        </header>
+        <main class="content user-detail-page">
+          <p class="user-detail-back">
+            <a href="user-search.html">← Back to search</a>
+          </p>
+          <div class="user-detail-layout" role="region" aria-label="Profile and GM actions">
+            <div class="user-detail-profile-block">
+              <div class="detail-profile">
+                <div class="detail-avatar" aria-hidden="true">A</div>
+                <div class="detail-meta">
+                  <h2>alex_creator</h2>
+                  <div class="meta-row">
+                    <span>UID <code>usr_7f3a9c</code></span>
+                    <span><span class="badge badge-success">Active</span></span>
+                    <span>Last login <kbd class="time-wib">2026.03.30 09:12 AM</kbd></span>
+                  </div>
+                  <p class="detail-meta-extra">
+                    <span>Bio: Music &amp; remix · Building on OneMore</span>
+                    <span class="detail-meta-sep">·</span>
+                    <span>Registered <kbd class="time-wib">2025.11.02 10:30 AM</kbd></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="user-detail-actions-row">
+              <div class="user-detail-col user-detail-col--right">
+                <section class="action-panel-card action-panel-card--ban" aria-labelledby="act-ban-title">
+                  <p id="act-ban-title" class="action-panel-section-title">Ban / Unban account</p>
+                  <p class="action-panel-hint action-panel-hint--short">Ban or Unban — one primary control; state-aware.</p>
+                  <div class="action-field action-field--grow">
+                    <label for="reason-ban-unban">Reason <span class="req-mark" aria-hidden="true">*</span></label>
+                    <textarea class="input input--action input--ban" id="reason-ban-unban" name="reasonBanUnban" rows="3" placeholder="Ban or unban reason…"></textarea>
+                  </div>
+                  <button type="button" class="btn btn-primary">Ban account</button>
+                </section>
+              </div>
+              <div class="user-detail-col user-detail-col--left">
+                <section class="action-panel-card" aria-labelledby="act-username-title">
+                  <p id="act-username-title" class="action-panel-section-title">Reset username</p>
+                  <div class="action-field">
+                    <label for="reason-reset-username">Reason <span class="req-mark" aria-hidden="true">*</span></label>
+                    <textarea class="input input--action" id="reason-reset-username" name="reasonResetUsername" rows="2" placeholder="Username reset reason…"></textarea>
+                  </div>
+                  <button type="button" class="btn btn-outline btn-sm">Reset username</button>
+                </section>
+                <section class="action-panel-card" aria-labelledby="act-bio-title">
+                  <p id="act-bio-title" class="action-panel-section-title">Reset bio</p>
+                  <div class="action-field">
+                    <label for="reason-reset-bio">Reason <span class="req-mark" aria-hidden="true">*</span></label>
+                    <textarea class="input input--action" id="reason-reset-bio" name="reasonResetBio" rows="2" placeholder="Bio reset reason…"></textarea>
+                  </div>
+                  <button type="button" class="btn btn-outline btn-sm">Reset bio</button>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <p class="card-title">Credit (linked PRD)</p>
+              <p style="margin: 0; font-size: 0.8125rem; color: var(--text-secondary)">Balance: <strong style="color: var(--text)">1,240</strong></p>
+              <p style="margin: 0.2rem 0 0; font-size: 0.75rem; color: var(--text-muted)">Daily / GM / type breakdown — placeholder</p>
+            </div>
+            <div class="card">
+              <p class="card-title">Counts</p>
+              <p style="margin: 0; font-size: 0.8125rem; color: var(--text-secondary)">Posts <strong style="color: var(--text)">142</strong> · Followers <strong style="color: var(--text)">8,240</strong></p>
+            </div>
+          </div>
+
+          <div class="card">
+            <p class="card-title">Works list</p>
+            <div class="table-wrap" style="border: none">
+              <table class="data">
+                <thead>
+                  <tr>
+                    <th>Post ID</th>
+                    <th>Preview</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code style="font-family: var(--font-mono); font-size: 0.8125rem">post_9aa01</code></td>
+                    <td>Spring loop</td>
+                    <td><span class="badge badge-success">Published</span></td>
+                    <td><a class="btn btn-ghost btn-sm" href="content-detail.html">Open</a></td>
+                  </tr>
+                  <tr>
+                    <td><code style="font-family: var(--font-mono); font-size: 0.8125rem">post_8bb12</code></td>
+                    <td>Draft idea</td>
+                    <td><span class="badge badge-neutral">Draft</span></td>
+                    <td><a class="btn btn-ghost btn-sm" href="content-detail.html">Open</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <p class="card-title">Operation history (this user)</p>
+            <div class="table-wrap" style="border: none">
+              <table class="data">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Target</th>
+                    <th>Time (WIB)</th>
+                    <th>Operator</th>
+                    <th>Reason</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Username reset</td>
+                    <td><code>usr_7f3a9c</code></td>
+                    <td><kbd class="time-wib">2026.01.10 02:00 PM</kbd></td>
+                    <td>GM Admin</td>
+                    <td>Policy — impersonation</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

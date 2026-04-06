@@ -1,0 +1,36 @@
+/* OneMore GM Tool — light theme, neutral palette */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --bg-app: #f4f4f6;
+  --bg-elevated: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-muted: #ececef;
+  --border: rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(15, 23, 42, 0.14);
+
+  --text: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+
+  /* Single neutral accent — primary actions & links */
+  --accent: #1f2937;
+  --accent-hover: #111827;
+  --accent-dim: rgba(15, 23, 42, 0.06);
+  --accent-focus: rgba(15, 23, 42, 0.12);
+
+  --warning: #b45309;
+  --danger: #b91c1c;
+  --info: #475569;
+
+  --sidebar-w: 252px;
+  --header-h: 58px;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+  --radius-input: 10px;
+  --shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.06);
+}

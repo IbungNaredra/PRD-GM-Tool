@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneMore GM Tool — Sign in</title>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="login-panel">
+        <div class="login-brand">
+          <img class="logo-img" src="assets/logo.png" alt="" width="160" height="48" />
+          <div>
+            <h1 style="margin: 0"><span class="brand-title">OneMore</span> GM Tool</h1>
+            <p style="margin: 0.2rem 0 0; font-size: 0.75rem; color: var(--text-muted); font-weight: 600">V1.1 · UI slice</p>
+          </div>
+        </div>
+        <p class="login-sub">GM Admin signs in here. Authentication is independent from the OneMore app; APIs are shared with the app backend.</p>
+        <form action="home.html" method="get">
+          <div class="field">
+            <label for="email">Work email <span class="req-mark" aria-hidden="true">*</span></label>
+            <input class="input" id="email" name="email" type="email" autocomplete="username" placeholder="you@company.com" />
+          </div>
+          <div class="field">
+            <label for="password">Password <span class="req-mark" aria-hidden="true">*</span></label>
+            <input class="input" id="password" name="password" type="password" autocomplete="current-password" placeholder="••••••••" />
+          </div>
+          <div class="field" style="margin-bottom: 0">
+            <label style="flex-direction: row; align-items: center; gap: 0.5rem; cursor: pointer">
+              <input type="checkbox" id="remember" name="remember" />
+              <span style="font-size: 0.875rem; color: var(--text-secondary)">Remember this device</span>
+            </label>
+          </div>
+          <div style="margin-top: 1.5rem">
+            <button type="submit" class="btn btn-primary" style="width: 100%">Sign in</button>
+          </div>
+        </form>
+        <p class="login-footnote">Prototype only — no real auth. Aligned with GM Tool Management Features PRD V1.1 (onemore_gm_tool_prd_updated).</p>
+      </div>
+    </div>
+  </body>
+</html>
