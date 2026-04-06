@@ -89,15 +89,18 @@
           </div>
         </header>
         <main class="content">
-          <p class="page-intro">All GM operations with pagination. Filter by operation type, time range, target UID / Post ID. Ban records include contextual “reverse” links (slice shows text links only).</p>
+          <p class="page-intro">All GM operations with pagination. Filter by operation type (including auto-moderation variants), time range, target UID / Post ID. Ban records include contextual “reverse” links (slice shows text links only).</p>
           <div class="toolbar">
             <select class="input" style="max-width: 220px">
               <option>All operation types</option>
               <option>Account ban</option>
+              <option>Account ban (auto-moderation)</option>
               <option>Account unban</option>
               <option>Content ban</option>
+              <option>Content ban (auto-moderation)</option>
               <option>Content unban</option>
               <option>Comment ban</option>
+              <option>Comment ban (auto-moderation)</option>
               <option>Comment unban</option>
               <option>Username reset</option>
               <option>Bio reset</option>
@@ -127,6 +130,14 @@
                   <td><kbd class="time-wib">2026.03.29 11:05 AM</kbd></td>
                   <td>GM Admin</td>
                   <td>Spam pattern</td>
+                  <td><a class="link-action" href="user-detail.html">Open user → Unban</a></td>
+                </tr>
+                <tr>
+                  <td>Account ban (auto-moderation)</td>
+                  <td><code>usr_9d4e01</code></td>
+                  <td><kbd class="time-wib">2026.03.29 10:22 AM</kbd></td>
+                  <td>System (Auto-Moderation)</td>
+                  <td>Policy threshold — repeated violations</td>
                   <td><a class="link-action" href="user-detail.html">Open user → Unban</a></td>
                 </tr>
                 <tr>
