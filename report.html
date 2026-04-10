@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneMore GM Tool — Report</title>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar" aria-label="Main">
+        <div class="sidebar-brand">
+          <img class="logo-img logo-img--sm" src="assets/logo.png" alt="" width="140" height="40" />
+          <div>
+            <strong><span class="brand-title">OneMore</span> GM Tool</strong>
+            <span>V1.1 Prototype</span>
+          </div>
+        </div>
+        <div class="nav-section">Navigation</div>
+        <ul class="nav-list">
+          <li>
+            <a href="home.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Overview
+            </a>
+          </li>
+          <li>
+            <a href="user-search.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              User search
+            </a>
+          </li>
+          <li>
+            <a href="content-search.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              Content search
+            </a>
+          </li>
+          <li>
+            <a href="grant-credit.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M20 12v10H4V12" />
+                <path d="M2 7h20v5H2z" />
+                <path d="M12 22V7" />
+                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+              </svg>
+              Grant credit
+            </a>
+          </li>
+          <li>
+            <a href="operation-log.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+              Operation log
+            </a>
+          </li>
+          <li>
+            <a href="debugging.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+              Debugging
+            </a>
+          </li>
+          <li>
+            <a class="active" href="report.html" aria-current="page">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                <line x1="4" y1="22" x2="4" y2="15" />
+              </svg>
+              Report
+            </a>
+          </li>
+        </ul>
+        <div class="sidebar-footer">Report PRD V1 — GM triage</div>
+      </aside>
+      <div class="main">
+        <header class="topbar">
+          <h1 class="topbar-title">Report</h1>
+          <div class="topbar-actions">
+            <a href="index.html" style="font-size: 0.8125rem; color: var(--text-muted)">Sign out</a>
+            <span class="env-pill">staging</span>
+            <div class="user-chip">
+              <div class="user-chip-avatar" aria-hidden="true">GA</div>
+              <span>GM Admin</span>
+            </div>
+          </div>
+        </header>
+        <main class="content">
+          <p class="page-intro">
+            User-submitted reports for posts and accounts (Report PRD section 8). Default sort: report count descending. Actions reuse existing ban flows; status drives retention (pending / reviewed / dismissed).
+          </p>
+          <div class="toolbar">
+            <select class="input" style="max-width: 160px" aria-label="Target type">
+              <option>All targets</option>
+              <option>Post</option>
+              <option>Account</option>
+            </select>
+            <select class="input" style="max-width: 200px" aria-label="Status">
+              <option>All statuses</option>
+              <option>Pending</option>
+              <option>Reviewed</option>
+              <option>Dismissed</option>
+            </select>
+            <input class="input" type="text" placeholder="From (date)" style="max-width: 140px" />
+            <input class="input" type="text" placeholder="To (date)" style="max-width: 140px" />
+            <button type="button" class="btn btn-primary btn-sm">Apply</button>
+          </div>
+          <div class="table-wrap">
+            <table class="data">
+              <thead>
+                <tr>
+                  <th>Target type</th>
+                  <th>Target ID</th>
+                  <th>Top reason</th>
+                  <th>Report count</th>
+                  <th>Latest report</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Post</td>
+                  <td><a href="content-detail.html">post_9aa01</a></td>
+                  <td>Spam or misleading</td>
+                  <td>24</td>
+                  <td><kbd class="time-wib">2026.04.10 01:05 PM</kbd></td>
+                  <td><span class="status-pill status-pill--pending">pending</span></td>
+                  <td class="report-actions">
+                    <button type="button" class="btn btn-primary btn-sm report-review-open">Review</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Account</td>
+                  <td><a href="user-detail.html">usr_2b81de</a> <span class="text-muted">(creator_north)</span></td>
+                  <td>Hate speech or harassment</td>
+                  <td>18</td>
+                  <td><kbd class="time-wib">2026.04.09 06:40 PM</kbd></td>
+                  <td><span class="status-pill status-pill--pending">pending</span></td>
+                  <td class="report-actions">
+                    <button type="button" class="btn btn-primary btn-sm report-review-open">Review</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Post</td>
+                  <td><a href="content-detail.html">post_7bcc2</a></td>
+                  <td>Violence or dangerous content</td>
+                  <td>9</td>
+                  <td><kbd class="time-wib">2026.04.08 10:12 AM</kbd></td>
+                  <td><span class="status-pill status-pill--reviewed">reviewed</span></td>
+                  <td class="report-actions"><span class="text-muted">—</span></td>
+                </tr>
+                <tr>
+                  <td>Account</td>
+                  <td><a href="user-detail.html">usr_9d4e01</a></td>
+                  <td>Sexual content</td>
+                  <td>3</td>
+                  <td><kbd class="time-wib">2026.04.05 03:00 PM</kbd></td>
+                  <td><span class="status-pill status-pill--dismissed">dismissed</span></td>
+                  <td class="report-actions"><span class="text-muted">—</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="field-hint">
+            Per PRD section 8.3: <strong>Review</strong> opens a dialog to set report status (pending / reviewed / dismissed) for both posts and accounts—use user or content detail for bans or other enforcement. User and content detail pages can surface a Reports badge with count.
+          </p>
+        </main>
+      </div>
+    </div>
+
+    <div id="report-review-modal" class="modal-backdrop" hidden role="presentation">
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="report-review-title">
+        <h2 id="report-review-title" class="modal-title">Review report</h2>
+        <p class="modal-lead">Set the triage status for this report. Use content or user detail pages for ban or other enforcement actions.</p>
+        <div id="report-review-summary" class="modal-summary"></div>
+        <div class="field" style="margin-bottom: 1rem">
+          <label for="report-review-status">Report status</label>
+          <select class="input" id="report-review-status" aria-label="Report status">
+            <option value="pending">Pending</option>
+            <option value="reviewed">Reviewed</option>
+            <option value="dismissed">Dismissed</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="report-review-cancel">Cancel</button>
+          <button type="button" class="btn btn-primary" id="report-review-save">Save status</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/report.js"></script>
+  </body>
+</html>

@@ -699,3 +699,108 @@ kbd.time-wib {
     grid-template-columns: 1fr;
   }
 }
+
+/* Debugging & Report (PRD slices) */
+/* .action-panel uses display:flex — must not override [hidden] or detail shows on load */
+.debugging-detail[hidden] {
+  display: none !important;
+}
+
+.debugging-toolbar {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.debugging-search-field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.inline-form-error {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgb(185, 28, 28);
+}
+
+.debugging-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  font-size: 0.8125rem;
+}
+
+.debugging-meta div {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.debugging-meta dt {
+  margin: 0;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.debugging-meta dd {
+  margin: 0;
+  font-size: 0.8125rem;
+}
+
+.debugging-meta code {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+.data--compact th,
+.data--compact td {
+  padding: 0.35rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.status-pill--pending {
+  background: rgba(234, 179, 8, 0.15);
+  color: rgb(161, 98, 7);
+}
+
+.status-pill--reviewed {
+  background: rgba(34, 197, 94, 0.12);
+  color: rgb(21, 128, 61);
+}
+
+.status-pill--dismissed {
+  background: var(--bg-muted);
+  color: var(--text-secondary);
+}
+
+.report-actions {
+  white-space: nowrap;
+}
+
+.report-actions .btn {
+  margin-right: 0.35rem;
+}
+
+.report-actions .btn:last-child {
+  margin-right: 0;
+}
